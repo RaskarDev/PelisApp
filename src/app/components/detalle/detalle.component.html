@@ -1,0 +1,14 @@
+<div class="row animated fadeIn fast" *ngIf="pelicula">
+  <div class="col-md-5 text-center">
+    <h1>{{pelicula.title}}</h1>
+    <img class="img-fluid" [src]="pelicula.poster_path | urlImagen:600" alt="{{pelicula.title}}">
+  </div>
+  <div class="col-md-7 text-center mt-5">
+    <h3>Sinopsis</h3>
+    <p class="mt-4 mb-4">{{pelicula.overview | noOverview}}</p>
+
+    <p>Valoración: <strong>{{pelicula.vote_average}} / 10</strong></p>
+
+    <button (click)="regresar()" class="btn btn-outline-danger mt-2">Regresar</button>
+  </div>
+</div>

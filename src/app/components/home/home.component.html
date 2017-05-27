@@ -1,0 +1,40 @@
+<h1 class="text-center pb-20" *ngIf="peliculasPopulares">Peliculas populares</h1>
+<div class="row pb-20">
+  <div class="card-group">
+    <div class="col-md-4" *ngFor="let pelicula of peliculasPopulares">
+      <div class="card animated fadeIn fast" style="width: 20rem; margin-bottom: 20px;">
+        <img class="card-img-top" [src]="pelicula.poster_path | urlImagen:300" alt="{{pelicula.title}}">
+        <div class="card-block text-center">
+          <h4 class="card-title">{{pelicula.title}}</h4>
+          <button type="button" class="btn btn-outline-primary" [routerLink]="['/detalle', pelicula.id+'h']">Ver detalles</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1 class="text-center pb-20" *ngIf="peliculasCartelera">Peliculas en cartelera</h1>
+<div class="row" *ngIf="peliculasCartelera">
+  <div class="col-md-4" *ngFor="let pelicula of peliculasCartelera">
+    <div class="card animated fadeIn fast" style="width: 20rem; margin-bottom: 20px;">
+      <img class="card-img-top" [src]="pelicula.poster_path | urlImagen:300" alt="{{pelicula.title}}">
+      <div class="card-block text-center">
+        <h4 class="card-title">{{pelicula.title}}</h4>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/detalle', pelicula.id+'h']">Ver detalles</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h1 class="text-center pb-20" *ngIf="peliculasKids">Peliculas populares para niños</h1>
+<div class="row" *ngIf="peliculasKids">
+  <div class="col-md-4" *ngFor="let pelicula of peliculasKids">
+    <div class="card animated fadeIn fast" style="width: 20rem; margin-bottom: 20px;">
+      <img class="card-img-top" [src]="pelicula.poster_path | urlImagen:300" alt="{{pelicula.title}}">
+      <div class="card-block text-center">
+        <h4 class="card-title">{{pelicula.title}}</h4>
+        <button type="button" class="btn btn-outline-primary" [routerLink]="['/detalle', pelicula.id+'h']">Ver detalles</button>
+      </div>
+    </div>
+  </div>
+</div>
